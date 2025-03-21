@@ -1,4 +1,4 @@
-from LLMResponse import get_response
+from LLM.LLMResponse import get_response
 from typing import List, Tuple
 import pandas as pd
 

@@ -1,7 +1,8 @@
-import json
+import pandas as pd
 
-with open('resource/userdata.json', 'r', encoding='utf-8') as file:
-    parsed_data = json.load(file)
+data = [{"Word": "hello", "Meaning": "안녕", "Multiplicity":1},
+        {"Word": "world", "Meaning": "세계", "Multiplicity":5}]
 
-print("Manager" in parsed_data)
-print(parsed_data)
+df = pd.DataFrame(data)
+
+print(df)

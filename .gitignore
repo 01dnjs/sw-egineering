@@ -32,7 +32,7 @@ ENV/
 *.swo
 
 # Project specific
-
+test.py
 
 # Logs
 *.log 
