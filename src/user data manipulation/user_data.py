@@ -169,3 +169,12 @@ class UserData:
             return self.__user_data[id].get(prop)
         else:
             return None
+    
+    def get_all_data(self):
+        """
+        Retrieves all data from the user data.
+
+        Returns:
+            dict: A dictionary containing all user data.
+        """
+        return self.__user_data
