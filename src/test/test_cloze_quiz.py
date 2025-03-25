@@ -11,7 +11,7 @@ class TestClozeQuizModel(unittest.TestCase):
             "meaning": ["사과", "바나나"]
         }
         self.db = pd.DataFrame(data)
-        self.model = ClozeQuizModel(self.db, APIKEY="AIzaSyCuvVgoGtTpPIvKbDuxiaDVAXZ2LVOc5QY")
+        self.model = ClozeQuizModel(self.db, APIKEY="dummy")
 
     def test_pairs_creation(self):
         # Mocking the LLM response
