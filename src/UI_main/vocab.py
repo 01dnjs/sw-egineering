@@ -14,21 +14,21 @@ def vocab_window(root):
     import sqlite3
     from DB_module.wordbook import Wordbook
 
-    # DB 연결
-    conn = sqlite3.connect("toeic_vocab.db")
+    # # DB 연결
+    # conn = sqlite3.connect("toeic_vocab.db")
 
-    # 사용자 정보 (예시로 admin 넣음)
-    user_info = {
-        "user_id": "admin",
-        "username": "관리자",
-        "is_admin": True
-    }
+    # # 사용자 정보 (예시로 admin 넣음)
+    # user_info = {
+    #     "user_id": "admin",
+    #     "username": "관리자",
+    #     "is_admin": True
+    # }
 
-    # Wordbook 인스턴스 생성
-    wb = Wordbook(conn, user_info)
+    # # Wordbook 인스턴스 생성
+    # wb = Wordbook(conn, user_info)
 
-    # 단어 받기
-    words = wb.show_word_list
+    # # 단어 받기
+    # words = wb.show_word_list
 
     # DB 연결 종료
     #conn.close()
@@ -50,15 +50,14 @@ def vocab_window(root):
     # exit_button = ttk.Button(root, text="닫기", bootstyle="danger", command=go_to_menu)
     # exit_button.pack(pady=20)
 from tkinter import ttk, font
-#ttest
 
 #단어 데이터
-# words = [
-#     {"id": 1, "word": "apple", "meaning": "사과", "pos": "명사", "example": "I ate an apple.", "category": "과일", "wrong_count": 0},
-#     {"id": 2, "word": "run", "meaning": "달리다", "pos": "동사", "example": "She runs fast.", "category": "동작", "wrong_count": 2},
-#     {"id": 3, "word": "blue", "meaning": "파란", "pos": "형용사", "example": "The sky is blue.", "category": "색상", "wrong_count": 1},
-#     {"id": 4, "word": "dog", "meaning": "개", "pos": "명사", "example": "Dogs are friendly.", "category": "동물", "wrong_count": 3},
-# ]
+words = [
+    {"id": 1, "word": "apple", "meaning": "사과", "pos": "명사", "example": "I ate an apple.", "category": "과일", "wrong_count": 0},
+    {"id": 2, "word": "run", "meaning": "달리다", "pos": "동사", "example": "She runs fast.", "category": "동작", "wrong_count": 2},
+    {"id": 3, "word": "blue", "meaning": "파란", "pos": "형용사", "example": "The sky is blue.", "category": "색상", "wrong_count": 1},
+    {"id": 4, "word": "dog", "meaning": "개", "pos": "명사", "example": "Dogs are friendly.", "category": "동물", "wrong_count": 3},
+]
 
 #DB연결
 import os
@@ -68,25 +67,25 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 import sqlite3
 from DB_module.wordbook import Wordbook
 
-# DB 연결
-conn = sqlite3.connect("toeic_vocab.db")
+# # DB 연결
+# conn = sqlite3.connect("toeic_vocab.db")
 
-# 사용자 정보 (예시로 admin 넣음)
-user_info = {
-    "user_id": "admin",
-    "username": "관리자",
-    "is_admin": True
-}
+# # 사용자 정보 (예시로 admin 넣음)
+# user_info = {
+#     "user_id": "admin",
+#     "username": "관리자",
+#     "is_admin": True
+# }
 
-# Wordbook 인스턴스 생성
-wb = Wordbook(conn, user_info)
+# # Wordbook 인스턴스 생성
+# wb = Wordbook(conn, user_info)
 
-wb.show_wordbook_menu()
+# wb.show_wordbook_menu()
 
-# 단어 받기
-words = wb.show_word_list()
+# # 단어 받기
+# words = wb.show_word_list()
 
-print(words)
+# print(words)
 
 filtered_words = words.copy()
 

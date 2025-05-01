@@ -5,11 +5,12 @@ from ttkbootstrap.constants import *
 def main_menu(root):
     from settings import settings_window
     from quiz_menu import quiz_menu
-    from vocab import vocab_window
+    #from vocab import vocab_window
 
 
     def open_vocab():
-        vocab_window(root)
+        print("")
+        #vocab_window(root)
 
     def open_quiz():
         quiz_menu(root)
