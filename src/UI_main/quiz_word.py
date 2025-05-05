@@ -3,7 +3,7 @@ from tkinter import messagebox
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 
-def quiz_interpret(root1):
+def quiz_word1(root1):
     from quiz_result import quiz_result
 
     #이런 배열을 데베에서 받았다고 가정
@@ -22,7 +22,7 @@ def quiz_interpret(root1):
         # if entered_text == None:
         #     entered_text = ""
 
-        if (entered_text == word_list[current_index][0]):
+        if (entered_text == word_list[current_index][1]):
             word_list_anwser[current_index] = 1
         else:
             word_list_anwser[current_index] = 0
@@ -41,7 +41,7 @@ def quiz_interpret(root1):
             messagebox.showinfo("", "모든 단어를 완료했습니다!")
             quiz_result(root1, word_list, word_list_anwser)
         else:
-            word_label.config(text= word_list[current_index][1], font=("Arial", 25))
+            word_label.config(text= word_list[current_index][0], font=("Arial", 25))
             count_word.config(text=f"남은 단어 갯수: {len(word_list) - current_index}", font=("나눔 고딕", 16))
             answer.delete(0, tk.END)
             hint_label.grid_forget()  # 다음 단어로 넘어갈 때 힌트 숨기기
@@ -63,7 +63,7 @@ def quiz_interpret(root1):
         widget.destroy()  
 
     tk.Label(root1, text="정답을 입력하세요", font=("나눔 고딕", 16)).pack(pady=20)
-    word_label = tk.Label(root1, text= word_list[current_index][1], font=("Arial", 25))
+    word_label = tk.Label(root1, text= word_list[current_index][0], font=("Arial", 25))
     word_label.pack(pady=20)
 
     answer = tk.Entry(root1)
