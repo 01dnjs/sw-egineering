@@ -3,7 +3,7 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import messagebox
 
-def category_make(root, user_number):
+def category_adjust(root, user_number, category_id):
     from category_manage import category_manage
         
     #DB연결
@@ -50,8 +50,8 @@ def category_make(root, user_number):
 
         #데이터베이스에 등록
         new_category = category_name.get().strip()
-        if category_db.create_category(user_number, new_category):
-            messagebox.showinfo("성공", "카테고리 생성 완료.")
+        if category_db.update_category(category_id, new_category, user_number): 
+            messagebox.showinfo("성공", "카테고리 수정 완료.")
         else:
             messagebox.showwarning("실패", "오류 발생")
         back_to_category()
@@ -62,15 +62,14 @@ def category_make(root, user_number):
     back_button = ttk.Button(root, text="뒤로가기", bootstyle="secondary", command=back_to_category)
     back_button.pack(anchor="ne", padx=10, pady=10)
 
-    title_label = ttk.Label(root, text="카테고리 생성", font=("Arial", 18, "bold"), bootstyle="primary")
+    title_label = ttk.Label(root, text="카테고리 수정", font=("Arial", 18, "bold"), bootstyle="primary")
     title_label.pack(pady=10)
 
     # 카테고리 입력
     category_name_entry = ttk.Entry(root, width=30, bootstyle="info", style="Placeholder.TEntry")
     category_name_entry.pack(pady=5)
-    set_placeholder(category_name_entry, "생성할 카테고리 이름")
+    set_placeholder(category_name_entry, "수정할 카테고리 이름")
 
-    # 생성 버튼 (양쪽 여백 추가)
-    signup_button = ttk.Button(root, text="생성", bootstyle="success", command=lambda: create_category(category_name_entry))
+    # 수정 버튼 (양쪽 여백 추가)
+    signup_button = ttk.Button(root, text="수정", bootstyle="success", command=lambda: create_category(category_name_entry))
     signup_button.pack(pady=20, padx=10, anchor="center")
-
